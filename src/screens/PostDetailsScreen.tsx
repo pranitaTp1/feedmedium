@@ -7,7 +7,6 @@ import { View, Text, StyleSheet } from 'react-native';
 
 const PostDetailsScreen = ({ route }) => {
   const postDetailId = route.params.id;
-  const timeRendered = route.params.timeRendered;
   const navigation = useNavigation();
   const [postDetail, setPostDetail] = useState<Post>();
   const [isLoading, setLoading] = useState(false);

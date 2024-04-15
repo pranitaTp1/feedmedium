@@ -1,7 +1,7 @@
 import { useCallback, useState, useMemo } from 'react';
 import { FlatList, View, Text, StyleSheet } from 'react-native';
 
-import PostItem from '../Posts/PostItem';
+import PostItem from './PostItem';
 import { Post } from '../../models/Post';
 
 const ITEM_HEIGHT = 70;
@@ -56,7 +56,7 @@ const PostList = ({ data }:postListProps) => {
         <Text
           style={[styles.timeRender, { color: isBlue ? '#6420AA' : '#1679AB' }]}
           onPress={() => setIsBlue(!isBlue)}>
-          {'\n'}The time taken for the heavy computation function to run on each render - {timeFuncRendered}
+          {'\n'}The time taken for the heavy computation function to run on each render = {timeFuncRendered}
           <Text style={styles.timeRenderNoteHighlight}>{'\n'}[Note: click near title of item]</Text>
           {'\n'}{'\n'}Updated Title: {title}
         </Text>
@@ -67,7 +67,7 @@ const PostList = ({ data }:postListProps) => {
           {'\n'}Heavy computation memoized Counter: {(memoizedMulitpliedCount)}{'\n'}
         </Text>
 
-        <Text style={styles.timeRender}> {'\n'}The child component when it re-renders due to changes in props. - {childTimeRendered}</Text>
+        <Text style={styles.timeRender}> {'\n'}The child component when it re-renders due to changes in props. = {childTimeRendered}</Text>
       </View>
       <FlatList
         data={data}
